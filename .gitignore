@@ -1,0 +1,28 @@
+# Environnement virtuel
+venv/
+env/
+.env
+
+# Base de données
+*.db
+*.sqlite3
+
+# Fichiers Python compilés
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Sauvegardes et exports
+backups/
+exports/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers sensibles
+*.secret
+*.key

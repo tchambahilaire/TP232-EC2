@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌾 Agri-Stat - Santé</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body style="background: #F1F8E9;">
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-success text-white"><h3><i class="bi bi-heart-pulse me-2"></i>Santé du Système</h3></div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr><th>Statut</th><td><span class="badge bg-success">{{ health.status }}</span></td></tr>
+                    <tr><th>Base de données</th><td>{{ health.database }}</td></tr>
+                    <tr><th>Nombre d'enregistrements</th><td>{{ health.records_count }}</td></tr>
+                    <tr><th>Espace disque utilisé</th><td>{{ health.disk_usage }}</td></tr>
+                    <tr><th>Mémoire utilisée</th><td>{{ health.memory_usage }}</td></tr>
+                    <tr><th>Version Python</th><td>{{ health.python_version }}</td></tr>
+                    <tr><th>Dernière sauvegarde</th><td>{{ health.last_backup }}</td></tr>
+                </table>
+                <a href="/dashboard" class="btn btn-success"><i class="bi bi-arrow-left me-1"></i>Retour</a>
+                <a href="/backup" class="btn btn-warning"><i class="bi bi-save me-1"></i>Sauvegarder maintenant</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
