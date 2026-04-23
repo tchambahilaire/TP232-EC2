@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>📅 Calendrier Cultural - Agri-Stat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body style="background: #F1F8E9; font-family: 'Segoe UI', sans-serif;">
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3><i class="bi bi-calendar3 me-2"></i>Calendrier Cultural</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Cultures</h5>
+                        <div class="list-group">
+                            {% for culture, data in calendar.items() %}
+                            <a href="?culture={{ culture }}" class="list-group-item list-group-item-action {% if selected == culture %}active{% endif %}">
+                                {{ culture }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        {% if info %}
+                        <h4 class="text-success">{{ selected }}</h4>
+                        <table class="table table-bordered mt-3">
+                            <tr><th>🌱 Période de semis</th><td>{{ info.semis }}</td></tr>
+                            <tr><th>🌾 Période de récolte</th><td>{{ info.recolte }}</td></tr>
+                            <tr><th>⏱️ Cycle</th><td>{{ info.cycle }}</td></tr>
+                        </table>
+                        {% else %}
+                        <p class="text-muted">👈 Sélectionnez une culture pour voir les informations.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <a href="/" class="btn btn-outline-secondary mt-3"><i class="bi bi-arrow-left"></i> Retour</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
